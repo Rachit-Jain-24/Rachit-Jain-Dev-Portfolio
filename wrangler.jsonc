@@ -1,6 +1,6 @@
 {
+  "name": "rachit-jain-dev-portfolio",
   "version": 1,
-  "name": "rachit-jain-portfolio",
   "compatibility_date": "2026-08-15",
   "main": "./.output/server/index.mjs",
   "assets": {
