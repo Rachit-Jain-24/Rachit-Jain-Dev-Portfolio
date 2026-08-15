@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "name": "rachit-jain-portfolio",
+  "compatibility_date": "2026-08-15",
+  "main": "./.output/server/index.mjs",
+  "assets": {
+    "directory": "./.output/public",
+    "binding": "ASSETS"
+  }
+}
