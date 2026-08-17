@@ -1,0 +1,11 @@
+.git
+.gitignore
+README.md
+node_modules
+.env.example
+.nvmrc
+.prettierignore
+.prettierrc
+eslint.config.js
+tsconfig.json
+src
