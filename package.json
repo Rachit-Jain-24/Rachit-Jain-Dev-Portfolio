@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "deploy:cloudflare": "rm -f bun.lock package-lock.json && npm install && npm run build"
+    "deploy:cloudflare": "rm -f bun.lock package-lock.json && npm install && npm run build",
+    "deploy:firebase": "npm run build && npx firebase deploy --only hosting"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
