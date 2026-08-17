@@ -167,10 +167,10 @@ export function SiteFooter() {
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
           I'm a 2026 B.Tech graduate in Computer Science & Engineering (Data Science) from NMIMS Hyderabad, actively looking for full-time roles in AI engineering, GenAI, and cloud infrastructure. Let's talk.
         </p>
-        <div className="mt-8 flex flex-wrap gap-2 sm:gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3">
           <a
             href={`mailto:${profile.email}`}
-            className="flex-1 rounded-md bg-foreground px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-background transition-opacity hover:opacity-85 sm:flex-none sm:px-4 sm:py-2.5 sm:text-xs"
+            className="rounded-md bg-foreground px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-background transition-opacity hover:opacity-85 sm:px-4 sm:py-2.5 sm:text-xs"
           >
             Email me
           </a>
@@ -178,7 +178,7 @@ export function SiteFooter() {
             href={profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex-1 rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:flex-none sm:px-4 sm:py-2.5 sm:text-xs"
+            className="rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:px-4 sm:py-2.5 sm:text-xs"
           >
             LinkedIn ↗
           </a>
@@ -186,7 +186,7 @@ export function SiteFooter() {
             href={profile.github}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex-1 rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:flex-none sm:px-4 sm:py-2.5 sm:text-xs"
+            className="rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:px-4 sm:py-2.5 sm:text-xs"
           >
             GitHub ↗
           </a>
@@ -194,7 +194,7 @@ export function SiteFooter() {
             href={profile.resume}
             target="_blank"
             rel="noreferrer noopener"
-            className="flex-1 rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:flex-none sm:px-4 sm:py-2.5 sm:text-xs"
+            className="rounded-md border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-widest text-foreground transition-colors hover:border-brand hover:text-brand sm:px-4 sm:py-2.5 sm:text-xs"
           >
             Resume ↓
           </a>

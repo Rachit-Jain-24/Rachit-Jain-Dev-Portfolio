@@ -47,7 +47,7 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SiteHeader />
 
       {/* HERO */}
@@ -369,7 +369,7 @@ function Index() {
           <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
             {skills.map((g, i) => (
               <Reveal key={g.group} delay={i * 60}>
-                <div className="rounded-lg border border-border bg-card p-4 sm:p-5">
+                <div className="rounded-lg border border-border bg-card p-4 sm:p-5 h-full">
                   <h3 className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:text-[11px]">
                     {g.group}
                   </h3>
@@ -472,7 +472,7 @@ function Index() {
           <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6">
             {currentlyLearning.map((l, i) => (
               <Reveal key={i} delay={i * 60}>
-                <div className="rounded-lg border border-border bg-card p-4 sm:p-5">
+                <div className="rounded-lg border border-border bg-card p-4 sm:p-5 h-full">
                   <h3 className="font-mono text-base font-semibold">{l.topic}</h3>
                   <p className="mt-2 text-xs text-muted-foreground sm:text-sm">{l.description}</p>
                   <div className="mt-3 flex flex-wrap gap-1 sm:mt-3 sm:gap-1.5">
