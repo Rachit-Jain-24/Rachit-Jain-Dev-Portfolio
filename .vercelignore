@@ -6,6 +6,3 @@ node_modules
 .nvmrc
 .prettierignore
 .prettierrc
-eslint.config.js
-tsconfig.json
-src
