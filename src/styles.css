@@ -141,6 +141,13 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  /* Make images responsive to prevent viewport overflow on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 @keyframes float {

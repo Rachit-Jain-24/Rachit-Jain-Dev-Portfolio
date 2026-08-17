@@ -75,12 +75,14 @@ function Index() {
             Available for work
           </div>
           
-          {/* Profile Section with Photo */}
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
-            {/* Profile Photo */}
+          {/* Profile Section */}
+          <div className="flex flex-col items-start gap-6">
+            {/* Profile Photo - COMMENTED OUT */}
+            {/* 
             <div className="relative">
-              <div className="relative overflow-hidden rounded-full border-4 border-background shadow-2xl md:w-32 md:h-32 lg:w-40 lg:h-40">
-                <img
+              <div className="relative overflow-hidden rounded-full border-4 border-background shadow-2xl w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40">
+                {/** Profile image temporarily disabled for mobile zoom fix **/}
+                {/* <img
                   src="/laptop_photo.jpeg"
                   alt="Rachit Jain"
                   className="w-full h-full object-cover"
@@ -88,14 +90,15 @@ function Index() {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                   }}
-                />
-                <div className="fallback-avatar hidden absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand to-purple-600 text-white font-mono font-semibold text-2xl md:text-4xl lg:text-5xl shadow-xl">
+                /> */}
+                <div className="fallback-avatar absolute inset-0 flex items-center justify-center bg-gradient-to-br from-brand to-purple-600 text-white font-mono font-semibold text-2xl md:text-4xl lg:text-5xl shadow-xl">
                   RJ
                 </div>
               </div>
             </div>
+            */}
             
-            <div className="flex-1">
+            <div className="flex-1 w-full">
               <h1 className="font-mono text-3xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
                 {profile.name}
               </h1>
