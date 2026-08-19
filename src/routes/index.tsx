@@ -17,7 +17,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: `${new URL(window.location.origin).origin}${profile.profilePhoto}` },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: `${new URL(window.location.origin).origin}${profile.profilePhoto}` },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -30,6 +34,7 @@ export const Route = createFileRoute("/")({
           jobTitle: "AI Engineer",
           alumniOf: "NMIMS Hyderabad",
           knowsAbout: ["Retrieval Augmented Generation", "Multi-Agent Systems", "AWS Bedrock"],
+          image: `${new URL(window.location.origin).origin}${profile.profilePhoto}`,
         }),
       },
     ],
@@ -70,24 +75,37 @@ function Index() {
         </div>
 
         <Reveal>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-card/90 backdrop-blur px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-brand shadow-lg sm:px-3 sm:py-1.5 sm:text-[11px]">
-            <span className="size-2 rounded-full bg-green-500 animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-            Available for work
-          </div>
-          
-          {/* Profile Section */}
-          <div className="flex flex-col items-start gap-6">
-            {/* Profile Photo - COMMENTED OUT for mobile zoom fix */}
-            {/* Temporarily disabled profile picture feature. To re-enable, uncomment this section and add responsive sizing. */}
-            
-            <div className="flex-1 w-full">
-              <h1 className="font-mono text-3xl font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-                {profile.name}
-              </h1>
-              <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg md:text-xl">{profile.role}</p>
-              <p className="mt-3 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm md:text-base">
-                {profile.tagline}
-              </p>
+          <div className="flex flex-col items-center md:items-start gap-8 md:gap-10">
+            {/* Profile Section with Photo */}
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 lg:gap-10 w-full max-w-5xl">
+              {/* Profile Photo */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-br from-brand to-purple-500 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-500"></div>
+                <div className="relative rounded-2xl overflow-hidden border-2 border-border shadow-2xl">
+                  <img
+                    src={profile.profilePhoto}
+                    alt={profile.name}
+                    className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    loading="eager"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 bg-card border-2 border-border rounded-lg px-3 py-2 shadow-lg hidden md:block">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <div className="flex-1 w-full text-center md:text-left">
+                <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
+                  {profile.name}
+                </h1>
+                <p className="mt-5 max-w-2xl text-lg md:text-xl lg:text-2xl text-muted-foreground">{profile.role}</p>
+                <p className="mt-4 max-w-xl text-sm md:text-base lg:text-lg leading-relaxed text-muted-foreground">
+                  {profile.tagline}
+                </p>
+              </div>
             </div>
           </div>
         </Reveal>
@@ -297,6 +315,18 @@ function Index() {
                   >
                     IEEE Xplore →
                   </a>
+                  {pub.certificate && (
+                    <div className="mt-4">
+                      <a
+                        href={pub.certificate.preview}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="font-mono text-[10px] uppercase tracking-widest text-brand hover:underline sm:mt-6 sm:text-xs"
+                      >
+                        View Certificate →
+                      </a>
+                    </div>
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -491,3 +521,4 @@ function Index() {
     </div>
   );
 }
+

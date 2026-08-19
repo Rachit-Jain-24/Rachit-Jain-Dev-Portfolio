@@ -336,6 +336,10 @@ export const publications = [
     summary:
       "Examines how ICT is reshaping modern education and the impact of scalable, AI-driven campus systems on learning outcomes.",
     link: "https://ieeexplore.ieee.org/document/10456031",
+    certificate: {
+      preview: "/certificates/previews/research_1.png",
+      pdf: "/certificates/research_1.pdf",
+    },
   },
   {
     title:
@@ -344,6 +348,10 @@ export const publications = [
     summary:
       "Presents a domain-specific federated RAG architecture with context-aware routing that improves accuracy and reduces hallucinations for multilingual campus Q&A.",
     link: "https://ieeexplore.ieee.org/document/11497500",
+    certificate: {
+      preview: "/certificates/previews/research_2.jpeg",
+      pdf: "/certificates/research_1.pdf",
+    },
   },
 ];
 

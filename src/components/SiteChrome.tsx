@@ -52,19 +52,19 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/90 backdrop-blur shadow-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
 
         {/* Logo */}
         <Link
           to="/"
-          className="font-mono text-sm font-semibold tracking-tight text-foreground"
+          className="font-mono text-sm sm:text-base font-semibold tracking-tight text-foreground"
           onClick={() => setMenuOpen(false)}
         >
           rachit<span className="text-brand">.dev</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-4 sm:gap-6">
           <button
             onClick={toggleTheme}
             className="grid size-9 place-items-center rounded-md border border-border text-foreground transition-colors hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
@@ -87,45 +87,64 @@ export function SiteHeader() {
               key={l.hash}
               to="/"
               hash={l.hash}
-              className="font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+              className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
             </Link>
           ))}
         </nav>
 
-        {/* Hamburger button — mobile only */}
-        <button
-          className="grid size-9 place-items-center rounded-md border border-border text-foreground transition-colors hover:border-brand hover:text-brand md:hidden"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          {/* Animated bars */}
-          <span className="flex flex-col gap-[5px]">
-            <span
-              className={`block h-px w-5 bg-current transition-all duration-300 ${
-                menuOpen ? "translate-y-[6px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-current transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-current transition-all duration-300 ${
-                menuOpen ? "-translate-y-[6px] -rotate-45" : ""
-              }`}
-            />
-          </span>
-        </button>
+        {/* Mobile toggle button */}
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleTheme}
+            className="grid size-9 place-items-center rounded-md border border-border text-foreground transition-colors hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            aria-label="Toggle theme"
+            title={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+          >
+            {theme === "light" ? (
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+              </svg>
+            ) : (
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+              </svg>
+            )}
+          </button>
+          <button
+            className="grid size-9 place-items-center rounded-md border border-border text-foreground transition-colors hover:border-brand hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {/* Animated bars */}
+            <span className="flex flex-col gap-[5px]">
+              <span
+                className={`block h-px w-5 bg-current transition-all duration-300 ${
+                  menuOpen ? "translate-y-[6px] rotate-45" : ""
+                }`}
+              />
+              <span
+                className={`block h-px w-5 bg-current transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block h-px w-5 bg-current transition-all duration-300 ${
+                  menuOpen ? "-translate-y-[6px] -rotate-45" : ""
+                }`}
+              />
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile dropdown menu */}
       <div
-        className={`overflow-hidden border-t border-border/70 transition-all duration-300 md:hidden ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`overflow-hidden transition-all duration-300 md:hidden ${
+          menuOpen ? "max-h-[500px] opacity-100 border-t border-border/70" : "max-h-0 opacity-0"
         }`}
       >
         <nav className="flex flex-col divide-y divide-border/50 bg-background/95 px-5">
@@ -134,7 +153,7 @@ export function SiteHeader() {
               key={l.hash}
               to="/"
               hash={l.hash}
-              className="py-4 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-brand"
+              className="py-4 font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-brand hover:bg-brand/5"
               onClick={() => setMenuOpen(false)}
             >
               {l.label}
@@ -145,7 +164,7 @@ export function SiteHeader() {
             href={profile.resume}
             target="_blank"
             rel="noreferrer noopener"
-            className="py-4 font-mono text-xs uppercase tracking-widest text-brand hover:underline"
+            className="py-4 font-mono text-sm uppercase tracking-widest text-brand hover:underline hover:bg-brand/5"
             onClick={() => setMenuOpen(false)}
           >
             Resume ↓
