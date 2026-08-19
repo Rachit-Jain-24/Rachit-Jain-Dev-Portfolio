@@ -85,8 +85,8 @@ function Index() {
                   <img
                     src={profile.profilePhoto}
                     alt={profile.name}
-                    className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    loading="eager"
+                    className="w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
                   />
                 </div>
                 <div className="absolute -bottom-3 -right-3 bg-card border-2 border-border rounded-lg px-3 py-2 shadow-lg hidden md:block">
