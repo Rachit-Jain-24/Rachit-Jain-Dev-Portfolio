@@ -367,14 +367,7 @@ function Index() {
                         rel="noreferrer noopener"
                         className="mt-3 inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest transition-colors hover:border-brand hover:text-brand sm:mt-4 sm:px-4 sm:py-2 sm:text-xs"
                       >
-                        <svg
-                          className="size-4"
-                          viewBox="0 0 24 24"
-                          fill="currentColor"
-                          aria-label="Play Store"
-                        >
-                          <path d="M12 2L1 21h22L12 2zm0 3.5L19.5 19h-15L12 5.5z" fill="currentColor"/>
-                        </svg>
+                        <img src="/playstore.png" alt="Google Play" className="size-4" />
                         View on Google Play
                         <span className="font-mono text-[9px] text-muted-foreground sm:text-xs">↗</span>
                       </a>
