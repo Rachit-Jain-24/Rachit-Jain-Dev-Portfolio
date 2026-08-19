@@ -181,7 +181,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
         <p className="font-mono text-xs uppercase tracking-widest text-brand">Contact</p>
         <h2 className="mt-3 max-w-xl font-mono text-xl font-semibold tracking-tight text-foreground sm:text-2xl md:text-3xl">
-          Open to AI/ML engineering roles.
+          Open to AI, Data & Cloud Engineering roles.
         </h2>
         <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
           I'm a 2026 B.Tech graduate in Computer Science & Engineering (Data Science) from NMIMS Hyderabad, actively looking for full-time roles in AI engineering, GenAI, and cloud infrastructure. Let's talk.
