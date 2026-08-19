@@ -171,8 +171,8 @@ function Index() {
               From curious student to production AI.
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
-              I'm a B.Tech Computer Science & Engineering (Data Science) graduate from NMIMS Hyderabad, graduated May 2026.
-              I specialise in building RAG pipelines and AI systems that handle real users and real edge cases — not just notebook demos.
+              I'm a B.Tech Computer Science & Engineering (Data Science) graduate from Svkm's Narsee Monjee Institute of Management Studies Hyderabad (NMIMS).
+              I specialise in building RAG pipelines and AI systems that handle real users and real edge cases not just notebook demos.
               My work has been peer-reviewed and published at IEEE twice.
             </p>
           </Reveal>

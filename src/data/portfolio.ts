@@ -31,7 +31,7 @@ export const profile = {
   name: "Rachit Jain",
   role: "AI Engineer | GenAI • RAG • Agentic AI • AWS",
   tagline: "I build practical AI systems using LLMs, RAG, and cloud infrastructure, while exploring agentic architectures and LLM internals.",
-  education: "B.Tech Computer Science & Engineering (Data Science), NMIMS Hyderabad · Graduated May 2026",
+  education: "B.Tech Computer Science & Engineering (Data Science), NMIMS Hyderabad · Fresher",
   certification: "AWS Certified Cloud Practitioner • 2026 • AWS Academy Cloud Architecting • 2026 • AWS Academy GenAI Foundations • 2026",
   email: "mailto:rachitshaileshjain@gmail.com",
   github: "https://github.com/Rachit-Jain-24",
@@ -68,8 +68,8 @@ export const journey = [
   },
   {
     year: "2026",
-    title: "B.Tech CSDS Graduate · Open to Hire",
-    body: "Graduated May 2026. Building AI-powered products and pursuing AI/ML engineering opportunities.",
+    title: "B.Tech CSDS Graduate · Ready to work",
+    body: "Building AI-powered products and pursuing AI/ML engineering opportunities.",
   },
 ];
 
@@ -362,10 +362,10 @@ export const experience = [
     org: "NextGen Services",
     period: "Jun 2025 – Aug 2025 · Hyderabad",
     points: [
-      "Built a RAG chatbot POC for internal employee FAQ retrieval using Python and LangChain.",
-      "Integrated retrieval capabilities with a React frontend.",
-      "Developed responsive React/Tailwind components.",
-      "Connected frontend components with backend APIs.",
+      "Spun up a RAG chatbot to answer employee FAQs — ended up using it for a few months before the team took it over.",
+      "Linked the backend retrieval with a clean React interface so employees could chat naturally.",
+      "Put together a responsive UI with React and Tailwind that actually worked on mobile too.",
+      "Connected the frontend to the backend so everything actually worked end-to-end.",
     ],
   },
   {
@@ -374,10 +374,10 @@ export const experience = [
     period: "Feb 2025 – Jun 2025 · Telangana",
     playStoreLink: "https://play.google.com/store/apps/details?id=com.mbnrvidhyaeye.hostelsurvey&pcampaignid=web_share",
     points: [
-      "Worked in a 4-member team to digitize workflows across 100+ government hostel facilities.",
-      "Implemented role-based authentication and real-time reporting using Firebase.",
-      "Contributed to testing, deployment and end-to-end product delivery.",
-      "Released the application on the Google Play Store for district officials.",
+      "Joined a small team to digitize hostel management for 100+ government facilities.",
+      "Built role-based auth and real-time dashboards with Firebase — got to see how government workflows really work.",
+      "Helped test, deploy, and get the app fully deployed across multiple districts.",
+      "Saw the app hit the Play Store — cool seeing government officials actually using it.",
     ],
   },
 ];
