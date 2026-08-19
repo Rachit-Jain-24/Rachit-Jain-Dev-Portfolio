@@ -418,14 +418,14 @@ export const achievements = [
     title: "AWS Academy Graduate - Cloud Architecting",
     issuer: "AWS Academy",
     date: "2026",
-    credlyUrl: "#",
+    credlyUrl: "https://www.credly.com/badges/898dfc4b-8351-49d8-93c0-95adec4e770e/public_url",
     imageUrl: "/badges/aws-academy-graduate-cloud-architecting-training-ba.png",
   },
   {
     title: "AWS Academy Graduate - GenAI Foundations",
     issuer: "AWS Academy",
     date: "2026",
-    credlyUrl: "#",
+    credlyUrl: "https://www.credly.com/badges/9bdeb6d7-22cd-4a4f-b571-5bc83873a90a/public_url",
     imageUrl: "/badges/aws-academy-graduate-generative-ai-foundations-trai.png",
   },
   {
@@ -439,7 +439,7 @@ export const achievements = [
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     date: "2026",
-    credlyUrl: "https://www.credly.com/badges/6f15ede2-4943-480c-a4cf-bb82e1bd8804/public_url",
+    credlyUrl: "#",
     imageUrl: "/badges/aws-certified-cloud-practitioner (1).png",
   },
   {
