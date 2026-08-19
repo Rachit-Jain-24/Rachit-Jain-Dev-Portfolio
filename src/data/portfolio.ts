@@ -37,6 +37,7 @@ export const profile = {
   github: "https://github.com/Rachit-Jain-24",
   linkedin: "https://www.linkedin.com/in/rachitjain24",
   resume: "https://drive.google.com/file/d/1A49U8c4HwSkHCx_BeTzVaMMqgzIkwo94/view?usp=drive_link",
+  profilePhoto: "/newprofilephoto.jpeg",
   stats: [
     { value: "91%", label: "RAG Benchmark Accuracy" },
     { value: "200+", label: "Students Using Campus2Career" },
