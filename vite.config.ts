@@ -12,5 +12,10 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
     router: { entry: "router.tsx" },
+    devtools: {
+      enabled: true,
+      icon: "/favicon.ico",
+      title: "Rachit Jain",
+    },
   },
 });
