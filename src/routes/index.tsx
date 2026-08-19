@@ -450,7 +450,7 @@ function Index() {
       </section>
 
       {/* CERTIFICATES */}
-      <section id="certificates" className="border-t border-border bg-surface/50">
+      <section id="certificates" className="border-t border-border">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 md:py-20">
           <Reveal>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand sm:text-xs">Certificates</p>
@@ -458,28 +458,110 @@ function Index() {
               Official Certifications.
             </h2>
           </Reveal>
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4">
+          
+          {/* Certificate Cards - Enhanced Layout */}
+          <div className="mt-6 space-y-4 sm:mt-8">
             {certificates.map((c, i) => (
               <Reveal key={i} delay={i * 60}>
-                <div className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all hover:border-brand hover:shadow-md">
-                  <div className="relative aspect-video overflow-hidden bg-surface">
-                    <img
-                      src={c.previewUrl}
-                      alt={`${c.title} preview`}
-                      className="h-full w-full object-cover object-center"
-                    />
+                <a
+                  href={c.pdfUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="group relative block overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-brand hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  <div className="flex flex-col md:flex-row">
+                    {/* Image Section */}
+                    <div className="relative aspect-[4/3] w-full md:w-64 overflow-hidden bg-surface">
+                      <img
+                        src={c.previewUrl}
+                        alt={`${c.title} preview`}
+                        className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    
+                    {/* Content Section */}
+                    <div className="flex flex-1 flex-col justify-center p-5 sm:p-6">
+                      <div className="mb-2 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-brand md:mb-3 md:text-[11px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                          <line x1="16" x2="8" y1="13" y2="13" />
+                          <line x1="16" x2="8" y1="17" y2="17" />
+                          <polyline points="10 9 9 9 8 9" />
+                        </svg>
+                        Verified Certificate
+                      </div>
+                      <h3 className="mb-2 font-mono text-lg font-bold tracking-tight sm:text-xl md:text-2xl">
+                        {c.title}
+                      </h3>
+                      <div className="mb-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                        <span className="font-medium">{c.issuer}</span>
+                        <span className="hidden h-3 w-px bg-border md:block" />
+                        <span className="font-mono text-xs uppercase tracking-wider">{c.date}</span>
+                      </div>
+                      <div className="mt-auto flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-brand transition-colors group-hover:text-brand sm:text-xs">
+                        <span>View Certificate</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" x2="21" y1="14" y2="3" />
+                        </svg>
+                      </div>
+                    </div>
                   </div>
-                  <div className="p-3 sm:p-4">
-                    <h3 className="font-mono text-base font-semibold">{c.title}</h3>
-                    <p className="mt-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground sm:text-[11px]">
-                      {c.issuer}
-                    </p>
-                    <p className="mt-2 font-mono text-[10px] text-muted-foreground sm:text-xs">{c.date}</p>
-                  </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
+          
+          {/* Research Paper Certificates Section - Commented Out */}
+          {/* 
+          <Reveal delay={200}>
+            <div className="mt-10 border-t border-border pt-8">
+              <h3 className="font-mono text-sm font-semibold text-muted-foreground sm:text-base">
+                Research Paper Certificates
+              </h3>
+              <div className="mt-4 grid gap-4 sm:mt-6 sm:grid-cols-2">
+                {publications.map((pub, i) => (
+                  pub.certificate && (
+                    <Reveal key={pub.title} delay={i * 80}>
+                      <a
+                        href={pub.certificate.preview}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="group block overflow-hidden rounded-xl border border-border bg-card transition-all hover:border-brand hover:shadow-lg hover:-translate-y-0.5"
+                      >
+                        <div className="aspect-video w-full overflow-hidden bg-background">
+                          <img
+                            src={pub.certificate.preview}
+                            alt={`${pub.title} certificate preview`}
+                            className="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-4 sm:p-5">
+                          <p className="font-mono text-[10px] uppercase tracking-widest text-brand sm:text-[11px]">
+                            {pub.venue}
+                          </p>
+                          <h4 className="mt-1 font-mono text-base font-semibold sm:text-lg">
+                            {pub.title}
+                          </h4>
+                          <div className="mt-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-brand sm:text-xs">
+                            <span>View Certificate</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                              <polyline points="15 3 21 3 21 9" />
+                              <line x1="10" x2="21" y1="14" y2="3" />
+                            </svg>
+                          </div>
+                        </div>
+                      </a>
+                    </Reveal>
+                  )
+                ))}
+              </div>
+            </div>
+          </Reveal>
+          */}
         </div>
       </section>
 
@@ -489,7 +571,7 @@ function Index() {
           <Reveal>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand sm:text-xs">Currently Exploring</p>
             <h2 className="mt-3 font-mono text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
-              What I'm leaning & building.
+              What I'm currently learning & building.
             </h2>
           </Reveal>
           <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6">
