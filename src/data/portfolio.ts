@@ -40,7 +40,7 @@ export const profile = {
   profilePhoto: "/newprofilephoto.jpeg",
   stats: [
     { value: "91%", label: "RAG Benchmark Accuracy" },
-    { value: "200+", label: "Students Using Campus2Career" },
+    { value: "200+", label: "Real Student Records Processed" },
     { value: "2", label: "IEEE Publications" },
   ],
 };

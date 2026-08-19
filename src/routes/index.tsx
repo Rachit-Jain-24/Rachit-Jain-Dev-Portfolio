@@ -496,7 +496,7 @@ function Index() {
           <Reveal>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-brand sm:text-xs">Currently Exploring</p>
             <h2 className="mt-3 font-mono text-xl font-semibold tracking-tight sm:text-2xl md:text-3xl">
-              What I'm building & learning.
+              What I'm leaning & building.
             </h2>
           </Reveal>
           <div className="mt-6 grid gap-4 sm:mt-8 sm:grid-cols-2 sm:gap-6">
