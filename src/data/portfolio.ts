@@ -411,7 +411,7 @@ export const achievements = [
     title: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
     date: "2026",
-    credlyUrl: "https://www.credly.com/badges/0f8d7b5c-9c8a-4b12-8e4a-1a2b3c4d5e6f",
+    credlyUrl: "https://www.credly.com/badges/6f15ede2-4943-480c-a4cf-bb82e1bd8804/public_url",
     imageUrl: "/badges/aws-certified-cloud-practitioner (1).png",
   },
   {
@@ -434,13 +434,6 @@ export const achievements = [
     date: "2023",
     credlyUrl: "https://www.credly.com/badges/76adc953-e60a-40de-97eb-7d943b4f8cf3/public_url",
     imageUrl: "/badges/python-essentials-1.1.png",
-  },
-  {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "2026",
-    credlyUrl: "#",
-    imageUrl: "/badges/aws-certified-cloud-practitioner (1).png",
   },
   {
     title: "MongoDB CRUD Operations",
