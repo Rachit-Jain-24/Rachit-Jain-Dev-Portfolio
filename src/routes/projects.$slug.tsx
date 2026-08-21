@@ -410,11 +410,37 @@ function CampusAssistantCaseStudy() {
     <>
       {node}
 
-      {/* 01 Problem */}
+      {/* 01 Demo Video */}
+      <Reveal>
+        <section className="py-8 sm:py-10">
+          <SectionHeading eyebrow="01 · Demo Video" title="Full end-to-end walkthrough." />
+          <p className="mb-6 text-sm leading-7 text-muted-foreground sm:text-base">
+            Watch the system in action: school selection, a multilingual query, routing decision, retrieval from school-specific FAISS shards, and cited responses rendered in real-time.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg">
+            <video
+              controls
+              className="w-full"
+              aria-label="Campus Assistant demo video"
+              poster="/projects/campus-assistant/first_interface_chat.jpg"
+            >
+              <source
+                src="/projects/campus-assistant/campus assistant demo - Made with Clipchamp.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </Reveal>
+
+      <Divider />
+
+      {/* 02 Problem */}
       <Reveal>
         <section className="py-8 sm:py-10">
           <SectionHeading
-            eyebrow="01 · Problem"
+            eyebrow="02 · Problem"
             title="Campus knowledge is siloed, multilingual, and hallucination-prone."
           />
           <div className="space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
@@ -707,34 +733,6 @@ function CampusAssistantCaseStudy() {
           </Callout>
         </section>
       </Reveal>
-
-      <Divider />
-
-      {/* 08 Demo */}
-      <Reveal>
-        <section className="py-10">
-          <SectionHeading eyebrow="08 · Demo" title="Full end-to-end walkthrough." />
-          <p className="mb-6 text-sm leading-7 text-muted-foreground sm:text-base">
-            The video walks through a complete session: school selection, a Hindi query, the routing
-            decision, retrieval from the school-specific FAISS shard, the grounding check, and the cited
-            response rendered in the chat UI.
-          </p>
-          <div className="overflow-hidden rounded-lg border border-border bg-surface">
-            <video
-              controls
-              className="w-full"
-              aria-label="Campus Assistant demo video"
-              poster="/projects/campus-assistant/first_interface_chat.jpg"
-            >
-              <source
-                src="/projects/campus-assistant/campus assistant demo - Made with Clipchamp.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-      </Reveal>
     </>
   );
 }
@@ -772,9 +770,39 @@ function GenericCaseStudy({ project }: { project: Project }) {
     <>
       {node}
 
+      {project.demoMedia ? (
+        <>
+          <Reveal>
+            <section className="py-8 sm:py-10">
+              <SectionHeading eyebrow="01 · Demo Video" title="Walkthrough." />
+              <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg">
+                <video controls className="w-full" aria-label={`${project.name} demo`}>
+                  <source src={project.demoMedia} type="video/mp4" />
+                </video>
+              </div>
+            </section>
+          </Reveal>
+          <Divider />
+        </>
+      ) : project.demoNote ? (
+        <>
+          <Reveal>
+            <section className="py-8 sm:py-10">
+              <SectionHeading eyebrow="01 · Demo Video" title="Coming soon." />
+              <div className="flex aspect-video items-center justify-center rounded-md border border-dashed border-border bg-surface">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
+                  {project.demoNote}
+                </p>
+              </div>
+            </section>
+          </Reveal>
+          <Divider />
+        </>
+      ) : null}
+
       <Reveal>
-        <section className="py-10">
-          <SectionHeading eyebrow="01 · Problem" title="What this was solving." />
+        <section className="py-8 sm:py-10">
+          <SectionHeading eyebrow="02 · Problem" title="What this was solving." />
           <p className="text-sm leading-7 text-muted-foreground">{project.problem}</p>
         </section>
       </Reveal>
@@ -842,32 +870,6 @@ function GenericCaseStudy({ project }: { project: Project }) {
           </Reveal>
         </>
       )}
-
-      <Divider />
-
-      {project.demoMedia ? (
-        <Reveal>
-          <section className="py-10">
-            <SectionHeading eyebrow="Demo" title="Walkthrough." />
-            <div className="overflow-hidden rounded-lg border border-border bg-surface">
-              <video controls className="w-full" aria-label={`${project.name} demo`}>
-                <source src={project.demoMedia} type="video/mp4" />
-              </video>
-            </div>
-          </section>
-        </Reveal>
-      ) : (
-        <Reveal>
-          <section className="py-10">
-            <SectionHeading eyebrow="Demo" title="Coming soon." />
-            <div className="flex aspect-video items-center justify-center rounded-md border border-dashed border-border bg-surface">
-              <p className="font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                {project.demoNote}
-              </p>
-            </div>
-          </section>
-        </Reveal>
-      )}
     </>
   );
 }
@@ -877,8 +879,12 @@ function GenericCaseStudy({ project }: { project: Project }) {
 function CaseStudy() {
   const { project } = Route.useLoaderData();
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [project.slug]);
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground animate-in fade-in slide-in-from-bottom-2 duration-500 ease-out">
       <SiteHeader />
 
       <article className="mx-auto max-w-3xl px-5 pb-16 pt-12 sm:px-6 sm:pt-16">
@@ -1005,11 +1011,61 @@ function Campus2CareerCaseStudy() {
     <>
       {node}
 
-      {/* 01 Problem */}
+      {/* 01 Demo Video */}
       <Reveal>
-        <section className="py-10">
+        <section className="py-8 sm:py-10">
+          <SectionHeading eyebrow="01 · Demo Video" title="Full end-to-end walkthrough." />
+          <p className="mb-6 text-sm leading-7 text-muted-foreground sm:text-base">
+            Watch the complete student journey: onboarding, resume upload, 4-year roadmap generation, AI career advisor chat, mock interview practice, and batch analytics.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg">
+            <video
+              controls
+              className="w-full"
+              aria-label="Campus2Career demo video"
+              poster="/projects/campus2career/campus2career_intro.png"
+            >
+              <source src="/projects/campus2career/demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </Reveal>
+
+      {/* Enterprise & Startup Product Readiness Banner */}
+      <Reveal>
+        <div className="my-6 rounded-xl border border-brand/40 bg-card p-5 sm:p-6 shadow-md">
+          <div className="flex items-center gap-2.5 text-brand">
+            <span className="relative flex size-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-brand" />
+            </span>
+            <span className="font-mono text-[11px] font-bold uppercase tracking-widest">
+              Startup & Enterprise SaaS Product Execution
+            </span>
+          </div>
+          <h3 className="mt-2.5 font-mono text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            Built as a Commercial-Ready University AI Placement Platform
+          </h3>
+          <p className="mt-2 text-xs sm:text-sm leading-relaxed text-muted-foreground">
+            Architected beyond a simple demo into a production-grade SaaS product designed for university-wide deployment. Featuring 28 modular features, role-based dashboards for students and university leadership, streaming multi-LLM failover, and institution-wide placement analytics.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-border/60">
+            <span className="rounded border border-border bg-surface px-2 py-1 font-mono text-[10px] text-foreground font-medium">Multi-Tenant Architecture</span>
+            <span className="rounded border border-border bg-surface px-2 py-1 font-mono text-[10px] text-foreground font-medium">Role-Based Leadership Dashboards</span>
+            <span className="rounded border border-border bg-surface px-2 py-1 font-mono text-[10px] text-foreground font-medium">28 Integrated Modules</span>
+            <span className="rounded border border-border bg-surface px-2 py-1 font-mono text-[10px] text-foreground font-medium">Production Database Schema</span>
+          </div>
+        </div>
+      </Reveal>
+
+      <Divider />
+
+      {/* 02 Problem */}
+      <Reveal>
+        <section className="py-8 sm:py-10">
           <SectionHeading
-            eyebrow="01 · Problem"
+            eyebrow="02 · Problem"
             title="Placement prep was fragmented, siloed, and impossible to scale."
           />
           <div className="space-y-4 text-sm leading-7 text-muted-foreground">
@@ -1240,32 +1296,6 @@ function Campus2CareerCaseStudy() {
           </div>
         </section>
       </Reveal>
-
-      <Divider />
-
-      {/* 07 Demo */}
-      <Reveal>
-        <section className="py-10">
-          <SectionHeading eyebrow="07 · Demo" title="Full end-to-end walkthrough." />
-          <p className="mb-6 text-sm leading-7 text-muted-foreground">
-            The demo video walks through a complete student journey: onboarding, resume upload and
-            analysis, 4-year roadmap generation, AI career advisor chat, mock interview practice,
-            and accessing batch analytics. Each step demonstrates how Campus2Career transforms
-            fragmented placement prep into a structured, data-driven experience.
-          </p>
-          <div className="overflow-hidden rounded-lg border border-border bg-surface">
-            <video
-              controls
-              className="w-full"
-              aria-label="Campus2Career demo video"
-              poster="/projects/campus2career/campus2career_intro.png"
-            >
-              <source src="/projects/campus2career/demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-      </Reveal>
     </>
   );
 }
@@ -1288,11 +1318,34 @@ function FinnacleAICaseStudy() {
     <>
       {node}
 
-      {/* 01 Problem */}
+      {/* 01 Demo Video */}
       <Reveal>
-        <section className="py-10">
+        <section className="py-8 sm:py-10">
+          <SectionHeading eyebrow="01 · Demo Video" title="Portfolio briefing walkthrough." />
+          <p className="mb-6 text-sm leading-7 text-muted-foreground sm:text-base">
+            Watch how portfolio tickers are processed into grounded, personalized investment briefs with real-time price movements, news sentiment, and actionable recommendations.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg">
+            <video
+              controls
+              className="w-full"
+              aria-label="FinnacleAI demo video"
+              poster="/projects/finnacleai/homepage_stock selection.png"
+            >
+              <source src="/projects/finnacleai/demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </Reveal>
+
+      <Divider />
+
+      {/* 02 Problem */}
+      <Reveal>
+        <section className="py-8 sm:py-10">
           <SectionHeading
-            eyebrow="01 · Problem"
+            eyebrow="02 · Problem"
             title="Retail investors drown in market noise with no personalized view."
           />
           <div className="space-y-4 text-sm leading-7 text-muted-foreground">
@@ -1463,33 +1516,6 @@ function FinnacleAICaseStudy() {
           </div>
         </section>
       </Reveal>
-
-      <Divider />
-
-      {/* 06 Demo */}
-      <Reveal>
-        <section className="py-10">
-          <SectionHeading eyebrow="06 · Demo" title="Portfolio briefing walkthrough." />
-          <p className="mb-6 text-sm leading-7 text-muted-foreground">
-            The demo shows how a user inputs their portfolio tickers, waits a few seconds for data
-            aggregation and memo generation, and receives a personalized investment brief with
-            portfolio performance, market context, holdings breakdown, and actionable recommendations.
-            The memo is structured, grounded in actual data, and tailored to the user's specific
-            holdings rather than generic market commentary.
-          </p>
-          <div className="overflow-hidden rounded-lg border border-border bg-surface">
-            <video
-              controls
-              className="w-full"
-              aria-label="FinnacleAI demo video"
-              poster="/projects/finnacleai/homepage_stock selection.png"
-            >
-              <source src="/projects/finnacleai/demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-      </Reveal>
     </>
   );
 }
@@ -1513,11 +1539,34 @@ function SmartResumeEvaluatorCaseStudy() {
     <>
       {node}
 
-      {/* 01 Problem */}
+      {/* 01 Demo Video */}
       <Reveal>
-        <section className="py-10">
+        <section className="py-8 sm:py-10">
+          <SectionHeading eyebrow="01 · Demo Video" title="Full end-to-end evaluation walkthrough." />
+          <p className="mb-6 text-sm leading-7 text-muted-foreground sm:text-base">
+            Watch the complete evaluation flow: resume upload, AWS Textract parsing, TF-IDF cosine similarity scoring, missing skill identification, and automated S3/SNS report pipeline.
+          </p>
+          <div className="overflow-hidden rounded-lg border border-border bg-surface shadow-lg">
+            <video
+              controls
+              className="w-full"
+              aria-label="Smart Resume Evaluator demo video"
+              poster="/projects/smart-resume-evaluator/UI_1.png"
+            >
+              <source src="/projects/smart-resume-evaluator/smart-resume-evaluator-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      </Reveal>
+
+      <Divider />
+
+      {/* 02 Problem */}
+      <Reveal>
+        <section className="py-8 sm:py-10">
           <SectionHeading
-            eyebrow="01 · Problem"
+            eyebrow="02 · Problem"
             title="Candidates had no way to see how an ATS actually parses and scores their resume."
           />
           <div className="space-y-4 text-sm leading-7 text-muted-foreground">
@@ -1681,32 +1730,6 @@ function SmartResumeEvaluatorCaseStudy() {
               caption="Admin portal — view all evaluations, download reports, manage student data"
               onClick={() => open(idx("/projects/smart-resume-evaluator/admin_portsal.png"))}
             />
-          </div>
-        </section>
-      </Reveal>
-
-      <Divider />
-
-      {/* 06 Demo */}
-      <Reveal>
-        <section className="py-10">
-          <SectionHeading eyebrow="06 · Demo" title="Full end-to-end evaluation walkthrough." />
-          <p className="mb-6 text-sm leading-7 text-muted-foreground">
-            The demo video walks through a complete evaluation: resume upload through Streamlit,
-            AWS Textract parsing, skill extraction and matching against job role, ATS score
-            calculation with TF-IDF cosine similarity, missing skill identification with learning
-            resources, report generation and upload to S3, and admin notification via SNS.
-          </p>
-          <div className="overflow-hidden rounded-lg border border-border bg-surface">
-            <video
-              controls
-              className="w-full"
-              aria-label="Smart Resume Evaluator demo video"
-              poster="/projects/smart-resume-evaluator/UI_1.png"
-            >
-              <source src="/projects/smart-resume-evaluator/smart-resume-evaluator-demo.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
           </div>
         </section>
       </Reveal>

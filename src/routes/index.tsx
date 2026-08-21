@@ -75,36 +75,63 @@ function Index() {
         </div>
 
         <Reveal>
-          <div className="flex flex-col items-center md:items-start gap-8 md:gap-10">
-            {/* Profile Section with Photo */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 lg:gap-10 w-full max-w-5xl">
-              {/* Profile Photo */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-br from-brand to-purple-500 rounded-2xl blur opacity-50 group-hover:opacity-70 transition duration-500"></div>
-                <div className="relative rounded-2xl overflow-hidden border-2 border-border shadow-2xl">
-                  <img
-                    src={profile.profilePhoto}
-                    alt={profile.name}
-                    className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute -bottom-3 -right-3 bg-card border-2 border-border rounded-lg px-3 py-2 shadow-lg hidden md:block">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                    <circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-10 lg:gap-12 w-full max-w-5xl">
+            {/* Profile Photo */}
+            <div className="relative group shrink-0">
+              <div className="overflow-hidden rounded-2xl border border-border bg-card">
+                <img
+                  src={profile.profilePhoto}
+                  alt={profile.name}
+                  className="w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 lg:w-56 lg:h-56 object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                  loading="lazy"
+                />
               </div>
-              
-              <div className="flex-1 w-full text-center md:text-left">
-                <h1 className="font-mono text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight">
-                  {profile.name}
-                </h1>
-                <p className="mt-5 max-w-2xl text-lg md:text-xl lg:text-2xl text-muted-foreground">{profile.role}</p>
-                <p className="mt-4 max-w-xl text-sm md:text-base lg:text-lg leading-relaxed text-muted-foreground">
-                  {profile.tagline}
-                </p>
+            </div>
+            
+            {/* Bio Content */}
+            <div className="flex-1 w-full text-center md:text-left">
+              <h1 className="font-mono text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.08] tracking-tight">
+                {profile.name}
+              </h1>
+              <p className="mt-3 text-base sm:text-lg md:text-xl font-medium text-brand">
+                {profile.role}
+              </p>
+              <p className="mt-3 max-w-xl text-xs sm:text-sm md:text-base leading-relaxed text-muted-foreground">
+                {profile.tagline}
+              </p>
+
+              {/* Action Buttons */}
+              <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-2.5">
+                <a
+                  href={profile.resume}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-md bg-brand px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-wider text-white shadow transition-all hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-xs"
+                >
+                  View Resume
+                </a>
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-md border border-border bg-card px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-wider transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
+                >
+                  GitHub ↗
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="rounded-md border border-border bg-card px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-wider transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
+                >
+                  LinkedIn ↗
+                </a>
+                <a
+                  href="#contact"
+                  className="rounded-md border border-border bg-card px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-wider transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
+                >
+                  Contact
+                </a>
               </div>
             </div>
           </div>
@@ -123,41 +150,6 @@ function Index() {
                 </div>
               </div>
             ))}
-          </div>
-        </Reveal>
-
-        <Reveal delay={180}>
-          <div className="mt-8 flex flex-wrap gap-2 sm:mt-10 sm:gap-3">
-            <a
-              href={profile.resume}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="rounded-md bg-brand px-3.5 py-2 font-mono text-[10px] uppercase tracking-widest text-white transition-opacity hover:opacity-90 sm:px-5 sm:py-2.5 sm:text-xs"
-            >
-              View Resume
-            </a>
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="rounded-md border border-border px-3.5 py-2 font-mono text-[10px] uppercase tracking-widest transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
-            >
-              GitHub ↗
-            </a>
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="rounded-md border border-border px-3.5 py-2 font-mono text-[10px] uppercase tracking-widest transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
-            >
-              LinkedIn ↗
-            </a>
-            <a
-              href="#contact"
-              className="rounded-md border border-border px-3.5 py-2 font-mono text-[10px] uppercase tracking-widest transition-colors hover:border-brand hover:text-brand sm:px-5 sm:py-2.5 sm:text-xs"
-            >
-              Contact
-            </a>
           </div>
         </Reveal>
       </section>

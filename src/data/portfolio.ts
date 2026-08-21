@@ -115,11 +115,11 @@ export const projects: Project[] = [
   {
     slug: "campus2career",
     name: "Campus2Career",
-    tagline: "AI Virtual Placement Assistant",
+    tagline: "University-Ready AI Placement SaaS Platform",
     problem:
-      "AI-powered career and placement platform helping students evaluate readiness, improve resumes, identify skill gaps and receive personalized career guidance.",
+      "Enterprise-grade multi-tenant placement SaaS platform featuring 28 integrated modules, role-based dashboards, automated ATS scoring, 4-year career milestone roadmaps, and real-time leadership analytics.",
     stack: ["React", "FastAPI", "PostgreSQL", "RAG", "LLM APIs", "GitHub Actions", "Firebase"],
-    highlight: "200+ Students · 28 Functional Modules",
+    highlight: "Enterprise SaaS · 28 Modules · 200+ Students",
     architectureImage: "/projects/campus2career/systemarch.png",
     decisions: [
       "Three-model LLM fallback chain (Claude 3.5 Sonnet → Llama 3 70B → Mistral 7B) keeps the assistant online through provider rate limits and model-specific outages.",
@@ -128,8 +128,10 @@ export const projects: Project[] = [
       "Hybrid retrieval: BM25 for exact clause matching (e.g., 'attendance 75%') + dense embeddings for conceptual queries (e.g., 'how to prepare for HR round').",
     ],
     results: [
-      { label: "Students", value: "200+" },
-      { label: "Functional modules", value: "28" },
+      { label: "Architecture", value: "Multi-Tenant SaaS" },
+      { label: "Real Users", value: "200+ Students" },
+      { label: "Product Scope", value: "28 Functional Modules" },
+      { label: "Build Quality", value: "University-Ready" },
     ],
     demoNote: "Demo video — full end-to-end walkthrough.",
     demoMedia: "/projects/campus2career/demo.mp4",
