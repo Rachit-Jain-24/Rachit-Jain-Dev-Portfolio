@@ -14,7 +14,7 @@ export default defineConfig({
     router: { entry: "router.tsx" },
     devtools: {
       enabled: true,
-      icon: "/favicon.ico",
+      icon: "/icons8-portfolio-color-hand-drawn-96.png",
       title: "Rachit Jain",
     },
   },

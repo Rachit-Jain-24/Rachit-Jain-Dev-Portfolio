@@ -16,7 +16,7 @@
       ]
     },
     {
-      "source": "/favicon.ico",
+      "source": "/icons8-portfolio-color-hand-drawn-(.*).png",
       "headers": [
         {
           "key": "Cache-Control",

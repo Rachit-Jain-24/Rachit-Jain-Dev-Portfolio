@@ -4,9 +4,9 @@ import { ArchThumb } from "@/components/ArchThumb";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { profile, projects, publications, experience, skills, journey, certifications, achievements, certificates, currentlyLearning } from "@/data/portfolio";
 
-const title = "Rachit Jain — AI Engineer | Multi-Agent Systems & Production RAG";
+const title = "Rachit Jain — Portfolio";
 const description =
-  "AI Engineer building multi-agent systems and production RAG. 91% RAG accuracy, 300+ users served, IEEE published 2024 & 2026.";
+  "AI Engineer building multi-agent systems and production RAG. 91% RAG accuracy, 200+ users served, IEEE published 2024 & 2026.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
